@@ -1,0 +1,8 @@
+#+TITLE: Maven Command Line Wrapper Example
+
+* Introduction
+This is a basic project illustrating the usage of [[https://github.com/rimerosolutions/maven-wrapper][Maven Command Line Wrapper]].
+
+The Maven Command Line Wrapper will auto-download and install [[http://maven.apache.org/][Apache Maven]] from the Internet and then run your Maven goals.
+
+Check the POM build plugins entry for the =ant-wrapper= as well as the =pluginRepositories= section.

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2013 Rimero Solutions
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.rimerosolutions.maven</groupId>
+  <artifactId>maven-wrapper-example</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>Maven Command Line Wrapper Example.</name>
+  <url>http://www.rimerosolutions.com</url>
+  
+ <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>rimerosolutions</id>
+      <name>Yves Zoundi</name>
+      <email>rimerosolutions@gmail.com</email>
+      <url>https://github.com/rimerosolutions</url>
+      <organization>Rimero Solutions</organization>
+      <organizationUrl>http://www.rimerosolutions.com</organizationUrl>
+      <roles>
+        <role>developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/rimerosolutions/maven-wrapper-example.git</connection>
+    <developerConnection>scm:git:https://github.com/rimerosolutions/maven-wrapper-example.git</developerConnection>
+    <url>https://github.com/rimerosolutions/maven-wrapper-example</url>
+  </scm>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.rimerosolutions.maven.plugins</groupId>
+        <artifactId>wrapper-maven-plugin</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <configuration>
+          <!-- optional wrapper jar output folder -->
+          <!--<wrapperDirectory>${basedir}/maven</wrapperDirectory>-->
+          <!-- optional base distribution url -->
+          <!--<baseDistributionUrl>http://mirrors.ibiblio.org/maven2/org/apache/maven/apache-maven/</baseDistributionUrl>-->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype.snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+    </pluginRepository>
+  </pluginRepositories>
+</project>
