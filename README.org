@@ -1,8 +1,69 @@
 #+TITLE: Maven Command Line Wrapper Example
 
 * Introduction
-This is a basic project illustrating the usage of [[https://github.com/rimerosolutions/maven-wrapper][Maven Command Line Wrapper]].
+This is a basic Maven project illustrating the usage of [[https://github.com/rimerosolutions/maven-wrapper][Maven Command Line Wrapper]]. 
+
+The wrapper is generated through a custom Maven plugin and available as a Maven goal through the *wrapper* namespace.
 
 The Maven Command Line Wrapper will auto-download and install [[http://maven.apache.org/][Apache Maven]] from the Internet and then run your Maven goals.
 
-Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plugin= as well as the =pluginRepositories= section.
+Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plugin=, as well as the =pluginRepositories= section.
+
+ : <project xmlns="http://maven.apache.org/POM/4.0.0"
+ :          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ :          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ :
+ :   <!-- other maven project elements -->
+ : 
+ :   <build>
+ :     <!-- other build elements -->
+ :
+ :     <plugins>
+ :       <!-- other plugins -->
+ :
+ :       <!-- ADD A REFERENCE TO THE MAVEN WRAPPER PLUGIN -->
+ :       <plugin>
+ :         <groupId>com.rimerosolutions.maven.plugins</groupId>
+ :         <artifactId>wrapper-maven-plugin</artifactId>
+ :         <version>0.0.1-SNAPSHOT</version>
+ :         <configuration>
+ : 	    <!-- optional base distribution url --> 
+ :          <baseDistributionUrl>https://repository.apache.org/content/repositories/releases/org/apache/maven/apache-maven</baseDistributionUrl>
+ :          <!-- optional wrapper jar output folder -->
+ :           <wrapperDirectory>${basedir}/maven</wrapperDirectory>
+ :         </configuration>
+ :       </plugin>
+ : 
+ :     </plugins>
+ :   </build>
+ : 
+ :   <!-- ADD A REFERENCE TO THE SONATYPE SNAPSHOTS REPOSITORY -->
+ :   <pluginRepositories>
+ :     <pluginRepository>
+ :       <id>sonatype.snapshots</id>
+ :       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+ :     </pluginRepository>
+ :   </pluginRepositories>
+ : </project>
+
+
+You can run the build with the =mvnw= scripts instead of the Maven =mvn= command.
+ : mvnw install
+
+There's already a Maven Wrapper(=mvnw=) at the root of this project, however you can re-generate it using the following command:
+ : mvn wrapper:wrapper
+
+* Use-cases of the Maven Wrapper
+
+ - You have a new or existing Maven project.
+ - You understand the concept of [[http://www.gradle.org/docs/current/userguide/gradle_wrapper.html][Gradle Command Line Wrapper]] and you want to take the advantage of the [[https://github.com/rimerosolutions/maven-wrapper][Maven Wrapper]].
+ - You add the *plugin* to the *build* section of your [[http://maven.apache.org/pom.html][Maven POM]] and a reference to the Sonatype OSS repository in my [[http://maven.apache.org/pom.html#Plugin_Repositories][pluginRepositories]] section.
+ - You notice that the Maven Wrapper plugin detects your current Maven version and uses it to generate the wrapper properties file for the 
+  download URL.
+ - You can also customize the wrapper output folder with a path relative to my project folder. The Maven download URL is also customizable.
+ - You realize that the Maven Wrapper really *IS* the same as the Gradle Wrapper except that it's not a built-in plugin, but an externally provided plugin. 
+
+* Further documentation
+For a full documentation(goals and usage) of the Maven Wrapper Plugin, please visit the homepage fo the [[https://github.com/rimerosolutions/maven-wrapper][Maven Command Line Wrapper]].
+
+
