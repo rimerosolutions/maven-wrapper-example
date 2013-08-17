@@ -7,7 +7,8 @@ The wrapper is generated through a custom Maven plugin and available as a Maven 
 
 The Maven Command Line Wrapper will auto-download and install [[http://maven.apache.org/][Apache Maven]] from the Internet and then run your Maven goals.
 
-Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plugin=, as well as the =pluginRepositories= section.
+Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plugin=.
+To use snapshots instead of releases, you'll need to add as well as a =pluginRepositories= section.
 
  : <project xmlns="http://maven.apache.org/POM/4.0.0"
  :          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,7 +26,7 @@ Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plu
  :       <plugin>
  :         <groupId>com.rimerosolutions.maven.plugins</groupId>
  :         <artifactId>wrapper-maven-plugin</artifactId>
- :         <version>0.0.1-SNAPSHOT</version>
+ :         <version>0.0.1</version>
  :         <configuration>
  : 	    <!-- optional base distribution url --> 
  :          <baseDistributionUrl>https://repository.apache.org/content/repositories/releases/org/apache/maven/apache-maven</baseDistributionUrl>
@@ -37,13 +38,15 @@ Check out the =pom.xml= for the =build/plugins= entry for the =wrapper-maven-plu
  :     </plugins>
  :   </build>
  : 
- :   <!-- ADD A REFERENCE TO THE SONATYPE SNAPSHOTS REPOSITORY -->
+ :   <!-- 
+ :   ADD A REFERENCE TO THE SONATYPE SNAPSHOTS REPOSITORY if you want to use snapshots
  :   <pluginRepositories>
  :     <pluginRepository>
  :       <id>sonatype.snapshots</id>
  :       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
  :     </pluginRepository>
  :   </pluginRepositories>
+ :  -->
  : </project>
 
 
