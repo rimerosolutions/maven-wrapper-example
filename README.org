@@ -66,6 +66,11 @@ There's already a Maven Wrapper(=mvnw=) at the root of this project, however you
  - You can also customize the wrapper output folder with a path relative to my project folder. The Maven download URL is also customizable.
  - You realize that the Maven Wrapper really *IS* the same as the Gradle Wrapper except that it's not a built-in plugin, but an externally provided plugin. 
 
+* Proxy server configuration
+If you're behind a proxy, please set MAVEN_OPTS accordingly:
+
+: set MAVEN_OPTS=-Dhttp.proxyHost=proxyhost -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxyhost -Dhttps.proxyPort=8080
+
 * Further documentation
 For a full documentation(goals and usage) of the Maven Wrapper Plugin, please visit the homepage fo the [[https://github.com/rimerosolutions/maven-wrapper][Maven Command Line Wrapper]].
 
