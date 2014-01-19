@@ -26,7 +26,7 @@ To use snapshots instead of releases, you'll need to add as well as a =pluginRep
  :       <plugin>
  :         <groupId>com.rimerosolutions.maven.plugins</groupId>
  :         <artifactId>wrapper-maven-plugin</artifactId>
- :         <version>0.0.1</version>
+ :         <version>0.0.2-SNAPSHOT</version>
  :         <configuration>
  : 	    <!-- optional base distribution url --> 
  :          <baseDistributionUrl>https://repository.apache.org/content/repositories/releases/org/apache/maven/apache-maven</baseDistributionUrl>
@@ -40,13 +40,13 @@ To use snapshots instead of releases, you'll need to add as well as a =pluginRep
  : 
  :   <!-- 
  :   ADD A REFERENCE TO THE SONATYPE SNAPSHOTS REPOSITORY if you want to use snapshots
+ :   -->
  :   <pluginRepositories>
  :     <pluginRepository>
  :       <id>sonatype.snapshots</id>
  :       <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
  :     </pluginRepository>
  :   </pluginRepositories>
- :  -->
  : </project>
 
 
