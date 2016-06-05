@@ -85,8 +85,11 @@ limitations under the License.
       <plugin>
         <groupId>com.rimerosolutions.maven.plugins</groupId>
         <artifactId>wrapper-maven-plugin</artifactId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.5-SNAPSHOT</version>
         <configuration>
+	    <verifyDownload>true</verifyDownload>
+	    <checksumAlgorithm>MD5</checksumAlgorithm>
+	    <mavenVersion>3.2.5</mavenVersion>
           <!-- optional wrapper jar output folder -->
           <!--
               <wrapperDirectory>${basedir}/maven</wrapperDirectory>
