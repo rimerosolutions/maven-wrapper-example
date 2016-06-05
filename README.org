@@ -26,7 +26,7 @@ To use snapshots instead of releases, you'll need to add as well as a =pluginRep
  :       <plugin>
  :         <groupId>com.rimerosolutions.maven.plugins</groupId>
  :         <artifactId>wrapper-maven-plugin</artifactId>
- :         <version>0.0.2-SNAPSHOT</version>
+ :         <version>0.0.5-SNAPSHOT</version>
  :         <configuration>
  : 	    <!-- optional base distribution url --> 
  :          <baseDistributionUrl>https://repository.apache.org/content/repositories/releases/org/apache/maven/apache-maven</baseDistributionUrl>
